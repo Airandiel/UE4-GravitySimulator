@@ -42,7 +42,7 @@ public:
 		Cube->SetMassOverrideInKg(TEXT("Cube0"), mass, true);
 	}
 	virtual void SetVelocity(FVector newVel) {
-		Cube->SetPhysicsLinearVelocity(newVel, false, TEXT("Cube0"));
+		Cube->SetPhysicsLinearVelocity(newVel, false);
 	}
 	float RunningTime;
 };
