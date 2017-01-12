@@ -35,6 +35,9 @@ AMyCube::AMyCube()
 	Cube->BodyInstance.MaxAngularVelocity = 800.0f;
 	Cube->SetNotifyRigidBodyCollision(true);
 	RootComponent = Cube;
+
+	Red = FLinearColor(1, 0, 0, 1);
+	Green = FLinearColor(0, 1, 0, 1);
 }
 
 // Called when the game starts or when spawned
@@ -47,15 +50,34 @@ void AMyCube::BeginPlay()
 	
 }
 
+
+
+//Create
+/*void AMyCube::InitializeTile(float TheColorAlpha)
+{
+	TheMatInst = UMaterialInstanceDynamic::Create(BaseMat, this); //BaseMat must have material parameter called "Color"
+
+																  //Lerp Color
+	FLinearColor InterpedColor = FMath::Lerp(Red, Green, TheColorAlpha);
+
+	//set Material Param
+	TheMatInst->SetVectorParameterValue(FName(Green), InterpedColor);
+
+	//Set Material
+	StaticMeshComponent.SetMaterial(0, TheMatInst);
+
+	//Done!
+}*/
+
 // Called every frame
 void AMyCube::Tick( float DeltaTime )
 {
 	Super::Tick(DeltaTime);
-	FVector NewLocation = GetActorLocation();
-	float DeltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
-	NewLocation.Z += DeltaHeight * 20.0f;       //Scale our height by a factor of 20
+	//FVector NewLocation = GetActorLocation();
+	//float DeltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
+	//NewLocation.Z += DeltaHeight * 20.0f;       //Scale our height by a factor of 20
 	RunningTime += DeltaTime;
-	SetActorLocation(NewLocation);
+	//SetActorLocation(NewLocation);
 	//FVector newVel(20, 20, 20);
 	//Cube->SetPhysicsLinearVelocity(newVel, false, TEXT("Cube0"));
 
@@ -79,3 +101,5 @@ void AMyCube::Tick( float DeltaTime )
 	Super::Tick(DeltaTime);*/
 
 //}*/
+
+

@@ -39,6 +39,7 @@ private:
 			return val;
 		}
 	};*/
-	const double G = 6.67428e-11;
+	//const double G = 6.67428e-11;
+	const double G = 6.67428;
 
 };

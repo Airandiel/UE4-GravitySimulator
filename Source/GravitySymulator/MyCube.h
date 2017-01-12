@@ -13,8 +13,16 @@ class GRAVITYSYMULATOR_API AMyCube : public AActor
 		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Cube, meta = (AllowPrivateAccess = "true"))
 		class UStaticMeshComponent* Cube;
 
-public:
+	UPROPERTY()
+		UMaterialInstanceDynamic* TheMatInst;
 
+	FLinearColor Red;
+	FLinearColor Green;
+	void InitializeTile(float TheColorAlpha);
+
+public:
+	/*UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		FVector OverrideColorEvent(FVector RGB);*/
 	// static mesh
 
 	//TSubobjectPtr<UStaticMeshComponent> MyBlock;
@@ -45,4 +53,8 @@ public:
 		Cube->SetPhysicsLinearVelocity(newVel, false);
 	}
 	float RunningTime;
+
+
 };
+
+
